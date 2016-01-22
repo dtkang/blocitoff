@@ -40,3 +40,6 @@ gem 'bcrypt'
 gem 'figaro', '1.0'
 
 gem 'devise'
+
+gem 'faker', '~> 1.6', '>= 1.6.1'
+

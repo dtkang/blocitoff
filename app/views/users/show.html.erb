@@ -1,0 +1,7 @@
+<br>
+<h2>User Profile</h2>
+<p>Email: <%= current_user.email %></p>
+<p>Account created: <%= current_user.created_at %></p>
+<p>Account last updated: <%= current_user.updated_at %></p>
+<p><%= link_to 'Edit profile', edit_user_registration_path %></p>
+<p><%= link_to 'Home page', welcome_index_path %></p>
