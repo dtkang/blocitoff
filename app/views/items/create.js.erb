@@ -1,0 +1,3 @@
+<% if @item.valid? %>
+    $('#items').append("<%= escape_javascript(render(@item))%>");
+<% end %>

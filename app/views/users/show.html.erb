@@ -1,7 +1,26 @@
 <br>
-<h2>User Profile</h2>
-<p>Email: <%= current_user.email %></p>
-<p>Account created: <%= current_user.created_at %></p>
-<p>Account last updated: <%= current_user.updated_at %></p>
+<div>
+  <table class="table table-striped">
+    <caption>My todos</caption>
+    <thead>
+      <tr>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.items.each do |item| %>
+        <tr>
+          <%= render partial: "items/item", locals: { item: item } %>
+        </tr>
+      <% end %> 
+      <tr id="items"></tr>
+      <tr>
+        <td>
+          <%= render partial: 'items/form', locals: {user: current_user, item: Item.new}  %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <p><%= link_to 'Edit profile', edit_user_registration_path %></p>
 <p><%= link_to 'Home page', welcome_index_path %></p>
