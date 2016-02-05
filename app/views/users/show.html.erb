@@ -1,26 +1,19 @@
 <br>
-<div>
-  <table class="table table-striped">
-    <caption>My todos</caption>
-    <thead>
-      <tr>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% current_user.items.each do |item| %>
-        <tr>
-          <%= render partial: "items/item", locals: { item: item } %>
-        </tr>
-      <% end %> 
-      <tr id="items"></tr>
-      <tr>
-        <td>
-          <%= render partial: 'items/form', locals: {user: current_user, item: Item.new}  %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<br>
+<div class="new-item">
+  <%= render partial: 'items/form', locals: {user: current_user, item: Item.new}  %>
 </div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>My current todos</th>
+    </tr>
+  </thead>
+  <tbody class="items">
+    
+      <%= render current_user.items %>
+   
+  </tbody>
+</table>
 <p><%= link_to 'Edit profile', edit_user_registration_path %></p>
 <p><%= link_to 'Home page', welcome_index_path %></p>
