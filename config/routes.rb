@@ -4,6 +4,5 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :destroy]
   end
   get 'welcome/index'
-
-  root to: 'users#show'
+  root to: 'welcome#index'
 end
